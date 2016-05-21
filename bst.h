@@ -3,10 +3,9 @@
 
 class node{
   public:
-    node(int de);
-    node(int d,int de);
+    node();
+    node(int d);
     int data;
-    int depth;
     node* left;
     node* right;
 };
@@ -14,15 +13,24 @@ class node{
 class bst{
   public:
     bst();
+    ~bst();
+    bst* copy();
     void add(int thing);
     int remove(int thing);
     void printtree();
+    void printinorder();
   protected:
     node* head;
   
   
   private:
-    void helpadd(node* root,int data,int depth);
+    void printinorderhelper(node* root);
+    void destroyerHelper(node* root);
+    int removehelp(node* root, int data);
+    node* removeReplaceHelper(node* root);
+    void helpadd(node* root,int data);
+    void resizeHeap(node*** myHeap,int* size,int newsize);
+    void mkheap(node*** myHeap, int* size,int index,node* root);
     int size;
   
 };
