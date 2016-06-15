@@ -1,8 +1,16 @@
+// a bst with bst things in it
+// the print creates a heap and then prints the heap with all the empty node it might have
+// this is slow but provides a great end user experience which is my #1 priority :)
+
 #include <iostream>
 #include <stdlib.h>
 #include "bst.h"
 
 //heap macros
+// i for collision reasons 
+// p = parent
+// lc = left child
+// rc = right child
 #define ip(i) (i-1)/2
 #define ilc(i) 2*i+1
 #define irc(i) 2*i+2
